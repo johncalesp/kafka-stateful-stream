@@ -1,0 +1,57 @@
+plugins {
+    id 'java'
+
+    id 'application'
+}
+
+ext {
+    // https://search.maven.org/artifact/org.apache.kafka/kafka-streams
+    kafkaVersion = '3.1.0'
+}
+
+application {
+    mainClassName = 'sandbox.stream.dev.App'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.apache.kafka:kafka-streams:${kafkaVersion}"
+
+    // logging
+    implementation 'org.slf4j:slf4j-api:1.7.36'
+    implementation 'ch.qos.logback:logback-classic:1.2.11'
+
+    // required for custom serdes
+    implementation 'com.google.code.gson:gson:2.9.0'
+
+    // required for interactive queries (server)
+    implementation 'io.javalin:javalin:4.5.0'
+    // required for interactive queries (client)
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+task envProperties(type:JavaExec){
+    main = application.mainClassName
+    classpath = sourceSets.main.runtimeClasspath
+    systemProperties = [
+            'host': 'localhost',
+            'port': '7000',
+            'stateDir': '/tmp/kafka-streams'
+    ]
+}
+
+run.dependsOn envProperties
+
+
+test {
+    useJUnitPlatform()
+}

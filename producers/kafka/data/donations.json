@@ -1,0 +1,18 @@
+[
+
+  {"donation": 100, "game_id": 1, "streamer_id": 2},
+  {"donation": 400, "game_id": 1, "streamer_id": 3},
+  {"donation": 500, "game_id": 1, "streamer_id": 4},
+  {"donation": 800, "game_id": 6, "streamer_id": 1},
+  {"donation": 2500, "game_id": 2, "streamer_id": 2},
+  {"donation": 9000.0, "game_id": 6, "streamer_id": 3},
+  {"donation": 12000.0, "game_id": 4, "streamer_id": 4},
+  {"donation": 7000, "game_id": 1, "streamer_id": 1},
+  {"donation": 2000, "game_id": 4, "streamer_id": 2},
+  {"donation": 10, "game_id": 1, "streamer_id": 3},
+  {"donation": 500, "game_id": 2, "streamer_id": 4},
+  {"donation": 800, "game_id": 6, "streamer_id": 1},
+  {"donation": 2500, "game_id": 2, "streamer_id": 2},
+  {"donation": 9000.0, "game_id": 6, "streamer_id": 3},
+  {"donation": 1200.0, "game_id": 6, "streamer_id": 4}
+]
