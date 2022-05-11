@@ -1,7 +1,7 @@
 # KAFKA STATEFUL STREAMING
 
 This project is based on the simulation of capturing live records coming from Twitch platform. <br>
-We hace three different topics:
+We have three different topics:
 
 1. donation-events
 2. streamers
